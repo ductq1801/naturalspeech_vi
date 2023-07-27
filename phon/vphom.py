@@ -15,8 +15,8 @@ def trans(word, dialect, chao, eight, nosuper, glottal, phonemic):
         chao_tones = chao_n_lower if nosuper else chao_n_super
 
     # Set variable for surface phonetic representation of labiodorsal finals
-    ld_nas = 'ŋ͡m' #if nosuper else 'ŋᵐ' 
-    ld_plo = 'k͡p' #if nosuper else 'kᵖ' 
+    ld_nas = 'ŋ͡m' if nosuper else 'ŋᵐ' 
+    ld_plo = 'k͡p' if nosuper else 'kᵖ' 
 
     # Set case for palatalized dorsal finals
     pal_nas = 'ɲ' if nosuper else 'ʲŋ'
@@ -197,8 +197,8 @@ def trans(word, dialect, chao, eight, nosuper, glottal, phonemic):
                         if cod == 'k': cod = pal_plo
                         if cod == 'ŋ': cod = pal_nas
                     elif nuc in ['u', 'ɔ', 'o'] and word != 'quốc':
-                        if cod == 'k': cod = 'k͡p'
-                        if cod == 'ŋ': cod = 'ŋ͡m'
+                        if cod == 'k': cod = 'kᵖ'
+                        if cod == 'ŋ': cod = 'ŋᵐ'
 
                 # Surface pre-palatal vowel centralization
                 if cod in [pal_nas, pal_plo]:
@@ -285,8 +285,8 @@ def trans(word, dialect, chao, eight, nosuper, glottal, phonemic):
 
                 # Labiodorsals after [u ɔ oː]
                 if nuc in ['u', 'ɔ', 'oː'] and cod in ['ŋ', 'k']:
-                    if cod == 'ŋ': cod = 'ŋ͡m'
-                    if cod == 'k': cod = 'k͡p'
+                    if cod == 'ŋ': cod = 'ŋᵐ'
+                    if cod == 'k': cod = 'kᵖ'
 
         ##
         # Universal UR modifications
