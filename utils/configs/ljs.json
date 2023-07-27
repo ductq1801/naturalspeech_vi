@@ -22,8 +22,8 @@
     "use_gt_duration": true
   },
   "data": {
-    "training_files":"filelists/ljs_audio_text_train_filelist.txt.cleaned",
-    "validation_files":"filelists/ljs_audio_text_val_filelist.txt.cleaned",
+    "training_files":"filelists/vttts_audio_text_train_filelist.txt.cleaned",
+    "validation_files":"filelists/vttts_audio_text_val_filelist.txt.cleaned",
     "text_cleaners":["english_cleaners2"],
     "max_wav_value": 32768.0,
     "sampling_rate": 22050,
