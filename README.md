@@ -97,6 +97,8 @@ During each evaluation phase, a selection of samples from the test set is evalua
 
 
 ## References
-- [VITS implemetation](https://github.com/jaywalnut310/vits) by @jaywalnut310 for normalizing flows, phoneme encoder, and hifi-gan decoder implementation
+- [VITS implemetation](https://github.com/jaywalnut310/vits) by @jaywalnut310 for normalizing flows,english phoneme encoder, and hifi-gan decoder implementation
 - [Parallel Tacotron 2 Implementation](https://github.com/keonlee9420/Parallel-Tacotron2) by @keonlee9420 for learnable upsampling Layer
 - [soft-dtw implementation](https://github.com/Maghoumi/pytorch-softdtw-cuda) by @Maghoumi for sdtw loss
+- [naturalspeech](https://github.com/heatz123/naturalspeech) by @heatz123 for code
+- [vPhone](https://github.com/kirbyj/vPhon) by @kirbyj for vietnamese phoneme encoder
