@@ -4,7 +4,7 @@
 Defines the set of symbols used in text input to the model.
 """
 _pad = "_"
-_punctuation = ';:,.!?¡¿—…"«»“” '
+_punctuation = ';:,.!?¡¿—-…"«»“” '
 #_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 _letters_ipa = "ɑɐɒæɓʙβɔɕçɗɖðʤəɘɚɛɜɝɞɟʄɡɠɢʛɦɧħɥʜɨɪʝɭɬɫɮʟɱɯɰŋɳɲɴøɵɸθœɶʘɹɺɾɻʀʁɽʂʃʈʧʉʊʋⱱʌɣɤʍχʎʏʑʐʒʔʡʕʢǀǁǂǃˈˌːˑʼ¹²³⁴⁵⁶⁷⁸ᴬᴮᶜᴰᵐᵖˀʴʰʱʲʷˠˤ˞↓↑→↗↘'̩'ᵻ"
 _letters = 'AÁÀẠẢÃĂẰẮẶẲẴÂẤẦẬẨẪBCDĐEÉÈẺẼẸÊẾỀỂỄỆFGHIÍÌỊỈĨJKLMNOÓÒỌỎÕƠỚỜỢỠỞÔỐỒỘỖỔPQRSTUÚÙỤỦŨƯỨỪỰỮỬVWXYZaáàạảãăắằặẳẵâấầậẩẫbcdđeéèẻẽẹêếềểễệfghiíìịỉĩjklmnoóòọỏõơớờợỡởôốồộỗổpqrstuúùụủũưứừựữửvwxyz'
@@ -14,4 +14,4 @@ symbols = [_pad] + list(_punctuation) + list(_letters) + list(_letters_ipa)
 
 # Special symbol ids
 SPACE_ID = symbols.index(" ")
-#print('ᵖ' in symbols)
+#print('-' in symbols)

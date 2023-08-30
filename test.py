@@ -1,3 +1,5 @@
 from phon.vphom import vphome
-cov = vphome(nosuper=False)
-print(cov.phonemize('lúc'))
+from text.cleaners import vietnamese_cleaners
+# cov = vphome(nosuper=False,glottal=True)
+# print(cov.phonemize('vì thấy nói toàn những Cléopâtre, Orion, Reine Margot, Pacifique, Limier vân vân.'))
+print(vietnamese_cleaners('vì thấy nói toàn những Cléopâtre, Orion, Reine Margot, Pacifique, Limier vân vân.'))

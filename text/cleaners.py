@@ -81,15 +81,20 @@ def transliteration_cleaners(text):
     text = lowercase(text)
     text = collapse_whitespace(text)
     return text
+
 def vietnamese_cleaners(text):
     text = lowercase(text)
     text = expand_abbreviations(text)
-    text = re.sub(r'- ','',text)
+    text = re.sub(r'^- ','',text)
+    text = re.sub(r'[\)\(\{\}]+','',text)
+    t = re.findall(r'\w [?.,]',text)
+    for i in t:
+        text = text.replace(i,i[0]+i[2])
     punct = text.split()
     punc_dict = {i:punct[i][-1] for i in range(len(punct)) if any(k in punct[i] for k in _punctuation) } # index:punction
     ct = vphome(chao=True)
     text = ct.phonemize(text)
-    text = re.sub(r'[][]','',text)
+    text = re.sub(r'[\]\[]','',text)
     text2 = text.split()
     for i in punc_dict:
         text2[i] += punc_dict[i]

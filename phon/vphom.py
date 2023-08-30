@@ -15,8 +15,8 @@ def trans(word, dialect, chao, eight, nosuper, glottal, phonemic):
         chao_tones = chao_n_lower if nosuper else chao_n_super
 
     # Set variable for surface phonetic representation of labiodorsal finals
-    ld_nas = 'ŋ͡m' if nosuper else 'ŋᵐ' 
-    ld_plo = 'k͡p' if nosuper else 'kᵖ' 
+    ld_nas = 'ŋᵐ' 
+    ld_plo = 'kᵖ' 
 
     # Set case for palatalized dorsal finals
     pal_nas = 'ɲ' if nosuper else 'ʲŋ'
