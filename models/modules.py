@@ -11,6 +11,7 @@ from torch.nn.utils import weight_norm, remove_weight_norm
 
 from utils import commons
 from utils.commons import init_weights, get_padding
+from transforms import piecewise_rational_quadratic_transform
 
 
 LRELU_SLOPE = 0.1
