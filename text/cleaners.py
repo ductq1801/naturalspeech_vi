@@ -14,9 +14,9 @@ hyperparameter. Some cleaners are English-specific. You'll typically want to use
 
 import re
 from unidecode import unidecode
-from phonemizer import phonemize
+#from phonemizer import phonemize
 from phon.vphom import vphome
-
+from text.symbols import _punctuation
 # Regular expression matching whitespace:
 _whitespace_re = re.compile(r"\s+")
 
@@ -85,8 +85,15 @@ def vietnamese_cleaners(text):
     text = lowercase(text)
     text = expand_abbreviations(text)
     text = re.sub(r'- ','',text)
+    punct = text.split()
+    punc_dict = {i:punct[i][-1] for i in range(len(punct)) if any(k in punct[i] for k in _punctuation) } # index:punction
     ct = vphome(chao=True)
     text = ct.phonemize(text)
+    text = re.sub(r'[][]','',text)
+    text2 = text.split()
+    for i in punc_dict:
+        text2[i] += punc_dict[i]
+    text = " ".join(text2)
     text = collapse_whitespace(text)
     return text
 
