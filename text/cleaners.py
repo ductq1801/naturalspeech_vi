@@ -83,11 +83,15 @@ def transliteration_cleaners(text):
     return text
 
 def vietnamese_cleaners(text):
+    org_text = text
     text = lowercase(text)
     text = expand_abbreviations(text)
-    text = re.sub(r'^- ','',text)
+    text = text.replace('...','')
+    text = re.sub('([-\.?,;:!]+\s[-\.?,;:!]+)+','.',text)
+    text = re.sub(r'- ','',text)
+    text = re.sub(r'^[-\.?,;:!]+\s+','',text)
     text = re.sub(r'[\)\(\{\}]+','',text)
-    t = re.findall(r'\w [?.,]',text)
+    t = re.findall(r'\w [-\.?,;:!]',text)
     for i in t:
         text = text.replace(i,i[0]+i[2])
     punct = text.split()
