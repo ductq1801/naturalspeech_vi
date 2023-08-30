@@ -415,7 +415,7 @@ class TextAudioLoaderWithDuration(torch.utils.data.Dataset):
         if self.use_gt_dur:
             duration = self.get_duration(os.path.basename(audiopath))
         else:
-            durtation = None
+            duration = None
         return (text, spec, wav, duration)
 
     def get_audio(self, filename):
