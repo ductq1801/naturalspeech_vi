@@ -77,6 +77,13 @@
       "kernel_size": 3,
       "p_dropout": 0.5
     },
+    "stochastic_duration_predictor": {
+      "in_channels": 192,
+      "filter_channels": 192,
+      "kernel_size": 3,
+      "p_dropout": 0.5,
+      "n_flows": 4
+    },
     "learnable_upsampling": {
       "d_predictor": 192,
       "kernel_size": 3,
