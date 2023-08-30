@@ -14,7 +14,7 @@ if __name__ == "__main__":
             "filelists/ljs_audio_text_test_filelist.txt",
         ],
     )
-    parser.add_argument("--text_cleaners", nargs="+", default=["english_cleaners2"])
+    parser.add_argument("--text_cleaners", nargs="+", default=["vietnamese_cleaners"])
 
     args = parser.parse_args()
 
