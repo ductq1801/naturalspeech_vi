@@ -370,7 +370,7 @@ class TextAudioLoaderWithDuration(torch.utils.data.Dataset):
     3) computes spectrograms from audio files.
     """
 
-    def __init__(self, audiopaths_and_text, hparams):
+    def __init__(self, audiopaths_and_text, hparams, use_gt_duration = False):
         self.audiopaths_and_text = load_filepaths_and_text(audiopaths_and_text)
         self.text_cleaners = hparams.text_cleaners
         self.max_wav_value = hparams.max_wav_value
@@ -379,7 +379,7 @@ class TextAudioLoaderWithDuration(torch.utils.data.Dataset):
         self.hop_length = hparams.hop_length
         self.win_length = hparams.win_length
         self.sampling_rate = hparams.sampling_rate
-
+        self.use_gt_dur = use_gt_duration
         self.cleaned_text = getattr(hparams, "cleaned_text", False)
 
         self.add_blank = hparams.add_blank
@@ -412,7 +412,10 @@ class TextAudioLoaderWithDuration(torch.utils.data.Dataset):
         audiopath, text = audiopath_and_text[0], audiopath_and_text[1]
         text = self.get_text(text)
         spec, wav = self.get_audio(audiopath)
-        duration = self.get_duration(os.path.basename(audiopath))
+        if self.use_gt_dur:
+            duration = self.get_duration(os.path.basename(audiopath))
+        else:
+            durtation = None
         return (text, spec, wav, duration)
 
     def get_audio(self, filename):
