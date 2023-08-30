@@ -15,7 +15,7 @@ hyperparameter. Some cleaners are English-specific. You'll typically want to use
 import re
 from unidecode import unidecode
 from phonemizer import phonemize
-
+from phon.vphom import vphome
 
 # Regular expression matching whitespace:
 _whitespace_re = re.compile(r"\s+")
@@ -81,7 +81,14 @@ def transliteration_cleaners(text):
     text = lowercase(text)
     text = collapse_whitespace(text)
     return text
-
+def vietnamese_cleaners(text):
+    text = lowercase(text)
+    text = expand_abbreviations(text)
+    text = re.sub(r'- ','',text)
+    ct = vphome(chao=True)
+    text = ct.phonemize(text)
+    text = collapse_whitespace(text)
+    return text
 
 def english_cleaners(text):
     """Pipeline for English text, including abbreviation expansion."""
